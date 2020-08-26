@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="../w1f1_login_view/css/bootstrap.css">
+    <link rel="stylesheet" href="../w1f1_login_view/css/wifi.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script type="text/javascript" src="../w1f1_login_view/js/bootstrap.js"></script>
+    <style>
+        #index-form {
+         margin-top: 250px;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+        <div class="logo-div"> <a class="navbar-brand" href="#"> <img src="../w1f1_login_view/images/logo(1).PNG"> </a> </div>
+        
+        <div class="collapse navbar-collapse" id="navbarsExample04">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="#">같이( 사는 ) : 가치 <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">혼자( 사는 ) : 가치</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link disabled" href="#">css 나가 뒤져</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+
+    <body class="text-center">
+        <form id="index-form" class="form-signin" method="post">
+        <c:if test="${empty loginInfo}">
+          <img class="mb-4" src="../w1f1_login_view/images/1Ps (1).png" alt="" width="72" height="72" />
+          <h1 class="h3 mb-3 font-weight-normal">"w1-f1"의 서비스 는 </h1>
+          <h1 class="h3 mb-3 font-weight-normal">카카오 로그인 후 사용이 가능합니다. </h1>
+            <div class="checkbox mb-3">
+                <label>
+                    <input type="checkbox" value="remember-me"> 닥쳐
+                  </label>
+            </div>
+        </c:if>  
+        <c:if test="${empty loginInfo}">
+            <a href="${kakao_url}"> <img id="button" src="../w1f1_login_view/images/kakao_login_medium_narrow.png" /></a>
+        </c:if>
+        </form>    
+    </body>
+    <footer>
+        <p class="mt-5 mb-3 text-muted">© 2019-2020</p>
+    </footer> 
+
+
+</body>
+</html>

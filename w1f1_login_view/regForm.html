@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../w1f1_login_view/css/bootstrap.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script type="text/javascript" src="../w1f1_login_view/js/bootstrap.js"></script>
+    <style>
+
+        #regForm {
+            position:fixed;
+            width: 500px;
+            top: 40%;
+            left: 40%;
+        }
+
+    </style>
+</head>
+<body>
+    <nav id="header" class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+        <div class="logo-div"> <a class="navbar-brand" href="#"> <img src="../w1f1_login_view/images/logo(1).PNG"> </a> </div>
+        
+        <div class="collapse navbar-collapse" id="navbarsExample04">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="#">같이( 사는 ) : 가치 <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">혼자( 사는 ) : 가치</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link disabled" href="#">css 나가 뒤져</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+
+      <form id="regForm">
+        <div class="form-group row">
+          <label for="staticEmail" class="col-sm-3 col-form-label">이메일</label>
+          <div class="col-sm-8">
+            <input type="text" readonly class="form-control-plaintext" id="staticEmail" value="email@example.com">
+          </div>
+        </div>
+        <div class="input-group">
+        <div class="form-group row">
+          <label for="inputNickName" class="col-sm-3 col-form-label">별명 / 닉네임</label>
+          <div class="col-sm-8">
+            <input type="text" class="form-control" id="inputText">
+          </div>
+          <label for="inputPassword" class="col-sm-3 col-form-label">전화번호</label>
+          <div class="col-sm-8">
+            <input type="password" class="form-control" id="inputPassword">
+          </div>
+          <label for="inputPassword" class="col-sm-3 col-form-label">주소</label>
+          <div class="col-sm-8">
+            <input type="password" class="form-control" id="inputPassword">
+          </div>
+        </div>
+        </div>
+      </form>
+</body>
+</html>

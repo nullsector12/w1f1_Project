@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../w1f1_login_view/css/bootstrap.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="../w1f1_login_view/css/sidebar.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script type="text/javascript" src="../w1f1_login_view/js/bootstrap.js"></script>
+    <script>
+        function openNav() {
+            document.getElementById('mysidenav').style.width = '250px';
+        }
+        function closeNav() {
+            document.getElementById('mysidenav').style.width = '0';
+        }
+    </script>
+
+    <style>
+        #header{
+            display: block;
+            
+        }
+        #slider {
+            position: absolute;
+            top: 30%;
+            left: 20%;
+        }
+    </style>
+</head>
+<body>
+    <div id="header"> 
+        <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+            <div> <input type="button" class="navbar-brand" onclick='openNav()'></div>
+            <div class="logo-div">  <img src="../w1f1_login_view/images/logo(1).PNG"> </div>
+            
+            <div class="collapse navbar-collapse" id="navbarsExample04">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                    <a class="nav-link" href="#">같이( 사는 ) : 가치 <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                    <a class="nav-link" href="#">혼자( 사는 ) : 가치</a>
+                    </li>
+                    <li class="nav-item">
+                    <a class="nav-link disabled" href="#">css 나가 뒤져</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </div>  
+
+    <div id="mysidenav" class="sidenav">
+		<a href="#" class="closebtn" onclick='closeNav()'>x</a>
+		<a href="#">About</a>
+		<a href="#">Services</a>
+		<a href="#">Clients</a>
+		<a href="#">Contact</a>
+		<a href="#">Portfolio</a>
+	</div>
+	
+      
+
+    <div id="slider" class="container"><h2> 슬라이드 테스트 </h2>
+        <div id="demo" class="carousel slide" data-ride="carousel">
+            <ol class="carousel-indicators">
+                <li data-target="#demo" data-slide-to="0" class="active"></li>
+                <li data-target="#demo" data-slide-to="1"></li>
+                <li data-target="#demo" data-slide-to="2"></li>
+            </ol>
+            <div class="carousel-inner">
+            <div class="carousel-item active" data-interval="7000">
+                <div class="card">
+                    <div class="card-header"> 푸키먼 도감 </div>
+                    <img src="../w1f1_login_view/images/pichu.png" class="card-img-top" alt="...">
+                    <div class="card-body">
+                    <p class="card-text">커여운 좝밥
+                        <p>성능은 개쓰레기지만 커여움으로 인기</p>
+                        <p>솔직히 귀엽긴 귀여움 ㅇㅈ?</p>
+                    </p>
+                    <p></p>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item" data-interval="7000">
+                <div class="card">
+                    <div class="card-header"> 푸키먼 도감 </div>
+                    <img src="../w1f1_login_view/images/pikachu.png" class="card-img-top" alt="...">
+                    <div class="card-body">
+                    <p class="card-text">조금 강해진 커여운 좝밥
+                        <p>그래봐야 전기쏘는 쥐새끼임</p>
+                        <p>지우 원툴</p>
+                    </p>
+                    <p></p>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="card">
+                    <div class="card-header"> 푸키먼 도감 </div>
+                    <img src="../w1f1_login_view/images/raichu.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                    <p class="card-text">번개의 돌까지 써서 진화시켰는데 오히려 쓰레기된 ㅄ 
+                        <p>심지어 커여운 맛도 없어짐</p>
+                        <p>"피카츄의 진화는 거꾸로 간다"</p> 
+                    </p>
+                    <p></p>
+                    </div>
+                </div>
+            </div>
+            </div>
+            <a class="carousel-control-prev" href="#demo" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#demo" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+            </a>
+
+        
+
+        </div>
+    </div>
+</body>
+</html>
