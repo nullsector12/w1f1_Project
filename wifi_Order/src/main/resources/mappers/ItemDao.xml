@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper 
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- namespace 필수 : interface의 full name으로 설정 -->
+<mapper namespace="wifi.order.solo.dao.ItemDao">
+
+	<!-- 게시글 등록 -->
+	<insert id="insertItem" parameterType="wifi.order.solo.model.Item">
+		insert into wifi.item (title, price, count_m, count_w, receive, addr, location, content, photo, state, view_count, category, midx) 
+		values (#{title}, #{price}, #{count_m}, #{count_w}, #{receive}, #{addr}, #{location}, #{content}, #{photo}, #{state}, #{view_count}, #{category}, #{midx})
+	</insert>
+	
+	
+	
+	
+	
+</mapper>

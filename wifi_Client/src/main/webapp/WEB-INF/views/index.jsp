@@ -20,7 +20,7 @@
 <body class="text-center">
     <form id="index-form" class="form-signin" method="post">
     <c:if test="${empty loginInfo}">
-      <img class="mb-4" src=<c:url value="resources/images/1Ps.png" /> alt="" width="72" height="72" />
+      <img class="mb-4" src=<c:url value="/static/images/1Ps.png" /> alt="" width="72" height="72" />
       <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
     	<div class="checkbox mb-3">
     		<label>
@@ -40,7 +40,7 @@
 		</c:if>
 	</div>
     <c:if test="${empty loginInfo}">
-		<a href="${kakao_url}"> <img id="button" src=<c:url value="resources/images/kakao_login_medium_narrow.png" />/></a>
+		<a href="${kakao_url}"> <img id="button" src=<c:url value="/static/images/kakao_login_medium_narrow.png" />/></a>
 	</c:if>
     
  

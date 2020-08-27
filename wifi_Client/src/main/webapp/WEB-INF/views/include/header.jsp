@@ -1,7 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<link rel="stylesheet" href="resources/css/bootstrap.css">
+<link rel="stylesheet" type="text/css" href="/static/css/bootstrap.css">
+<script src="/static/js/bootstrap.js"></script>
 <script src="https://code.jquery.com/jquery-1.12.4.js"></script>    
 
 <header>
@@ -16,15 +17,12 @@
         <div class="container d-flex justify-content-between">
 		    <ul id="nav" class="nav justify-content-center">		
 				<li id="list" class="nav-item"><a class="nav-link active" href="
-					<c:if test="${!empty loginInfo}"><c:url value="/board/itemList"/></c:if>
+					<c:if test="${!empty loginInfo}"><c:url value="${pageContext.request.contextPath}/wifi/orderview"/></c:if>
 					<c:if test="${empty loginInfo}"><c:url value="${kakao_url}"/></c:if> ">게시판으로</a>
 				</li>
 			<c:if test="${!empty loginInfo}">
 				<li id="logout" class="nav-item">
 					<a class="nav-link active" href="${logout_url}">로그아웃</a>
-				</li>
-				<li id="info" class="nav-item">
-					<h3 class="nav-link disabled">아이디 출력 : ${loginInfo.id}</h3>
 				</li>
 			</c:if>
 			</ul>
