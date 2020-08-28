@@ -12,7 +12,7 @@ import wifi.order.solo.model.ItemRegRequest;
 import wifi.order.solo.service.ItemRegService;
 
 @RestController
-@RequestMapping("/wifi/items")
+@RequestMapping("/regItem")
 public class ItemRegController {
 
 	@Autowired

@@ -38,7 +38,7 @@ public class MemberRegService {
 		if(result != 0) {
 			
 			// 회원가입 성공 시
-			regResult = "<script>" + "alert('가입이 완료되었습니다.');" + "location.href=\"/login/member/loginForm\"</script>";
+			regResult = "<script>" + "alert('가입이 완료되었습니다.');" + "location.href=\"/wifi/loginForm\"</script>";
 		} else {
 			
 			// 회원가입 실패 시

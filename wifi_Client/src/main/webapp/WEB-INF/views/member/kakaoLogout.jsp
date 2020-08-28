@@ -2,5 +2,5 @@
     pageEncoding="UTF-8"%>
 <script>
 	alert('kakaoLogout');
-	location.href="/index";
+	location.href="/";
 </script>

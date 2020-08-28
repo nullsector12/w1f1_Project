@@ -7,9 +7,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class indexController {
 	
 	@RequestMapping(value="/")
-	public String index() {
+	public String home() {
 		
-		return "index";
+		return "board/itemList";
 	}
 
 }

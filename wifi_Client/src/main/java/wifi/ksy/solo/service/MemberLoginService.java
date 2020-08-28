@@ -52,10 +52,10 @@ public class MemberLoginService {
 				// 쿠키설정은 나중에
 				
 				// 로그인 성공 시
-				loginResult = "<script> location.href=\"/index\"</script>";
+				loginResult = "<script> location.href=\"/itemList\"</script>";
 			} else {
 				// DB에 email 정보가 저장되어있지 않을 시
-				loginResult = "<script>location.href=\"/wifi/memberReg\"</script>";
+				loginResult = "<script>location.href=\"/memberReg\"</script>";
 			}
 			
 			

@@ -6,9 +6,15 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 <mapper namespace="wifi.order.solo.dao.ItemDao">
 
 	<!-- 게시글 등록 -->
-	<insert id="insertItem" parameterType="wifi.order.solo.model.Item">
-		insert into wifi.item (title, price, count_m, count_w, receive, addr, location, content, photo, state, view_count, category, midx) 
-		values (#{title}, #{price}, #{count_m}, #{count_w}, #{receive}, #{addr}, #{location}, #{content}, #{photo}, #{state}, #{view_count}, #{category}, #{midx})
+	<insert id="insertItem" 
+		parameterType="wifi.order.solo.model.Item" 
+		useGeneratedKeys="true"
+		keyProperty="iidx"
+		>
+		<![CDATA[
+		insert into wifi.item (title, price, count_m, count_w, receive, addr, content, state, view_count, category, midx) 
+		values (#{title}, #{price}, #{count_m}, #{count_w}, #{receive}, #{addr}, #{content}, #{state}, #{view_count}, #{category}, #{midx})
+		]]>
 	</insert>
 	
 	

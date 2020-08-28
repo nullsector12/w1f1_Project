@@ -33,7 +33,7 @@
 		p:mapperLocations="/WEB-INF/mapper/*.xml"></bean>
 
 	<!-- Mybatis 이용하는 template 클래스 => sqlSessionTemplate -->
-
+ 
 	<bean id="sqlSession"
 		class="org.mybatis.spring.SqlSessionTemplate">
 		<!-- sqlSessionTemplate은 반드시 sqlSessionFactory가 필요하므로, 생성자주입방식으로 주입받도록 

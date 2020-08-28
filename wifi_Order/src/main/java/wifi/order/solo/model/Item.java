@@ -20,10 +20,8 @@ public class Item {
 	private Timestamp receive;
 	
 	private String addr;
-	private String location;
 	private String content;
-	private String photo;
-	
+
 	private int state;
 	private int view_count;
 	private int category;
@@ -33,14 +31,14 @@ public class Item {
 		
 	}
 	
-	public Item(String title, int price, int count_m, int count_w, Timestamp receive, String addr, String location,
+	public Item(String title, int price, int count_m, int count_w, Timestamp receive, String addr,
 			String content, int state, int view_count, int category, int midx) {
 		this(0, title, price, count_m, count_w, null, receive, addr, 
-				location, content, null, state, view_count, category, midx);
+				content, state, view_count, category, midx);
 	}
 	
 	public Item(int iidx, String title, int price, int conut_m, int count_w, Timestamp regdate, Timestamp receive,
-			String addr, String location, String content, String photo, int state, int view_count, int category,
+			String addr, String content, int state, int view_count, int category,
 			int midx) {
 		super();
 		this.iidx = iidx;
@@ -51,9 +49,7 @@ public class Item {
 		this.regdate = regdate;
 		this.receive = receive;
 		this.addr = addr;
-		this.location = location;
 		this.content = content;
-		this.photo = photo;
 		this.state = state;
 		this.view_count = view_count;
 		this.category = category;
@@ -120,24 +116,14 @@ public class Item {
 	public void setAddr(String addr) {
 		this.addr = addr;
 	}
-	public String getLocation() {
-		return location;
-	}
-	public void setLocation(String location) {
-		this.location = location;
-	}
+
 	public String getContent() {
 		return content;
 	}
 	public void setContent(String content) {
 		this.content = content;
 	}
-	public String getPhoto() {
-		return photo;
-	}
-	public void setPhoto(String photo) {
-		this.photo = photo;
-	}
+
 	public int getState() {
 		return state;
 	}

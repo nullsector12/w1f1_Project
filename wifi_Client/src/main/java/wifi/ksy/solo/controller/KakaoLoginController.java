@@ -24,18 +24,19 @@ public class KakaoLoginController {
 		
 		
 		// 카카오 디벨로퍼스에서 미리 설정한 REST API의 리다이렉트 경로를 리턴하는 메서드 
-		@RequestMapping(value="/index", method= RequestMethod.GET)
-		public ModelAndView KakaoLoginForm (HttpSession session) {
-			ModelAndView mav = new ModelAndView();
+		@RequestMapping(value="wifi/kakaoLogin", method= RequestMethod.GET)
+		public String KakaoLoginForm (HttpSession session) {
+			
+			
 			
 			String kakaoUrl = KakaoAPIService.getAuthorizationUrl(session);
 			String logoutUrl = KakaoAPIService.logoutRequestUrl(session);
-			mav.addObject("kakao_url", kakaoUrl);
-			mav.addObject("logout_url",logoutUrl);
+			session.setAttribute("kakao_url",kakaoUrl);
+			session.setAttribute("logout_url",logoutUrl);
 			
 			System.out.println("KakaoLoginController.kakaoLoginForm : " + kakaoUrl);
 			System.out.println("KakaoLoginController.kakaoLogoutForm : " + logoutUrl);
-			return mav;
+			return "member/kakaoLogin";
 		}
 		
 		

@@ -14,7 +14,7 @@ import wifi.ksy.solo.service.MemberRegService;
 
 
 @Controller
-@RequestMapping(value="member/memberReg")
+@RequestMapping(value="/memberReg")
 public class MemberRegController {
 	
 	@Autowired

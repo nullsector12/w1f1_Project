@@ -18,7 +18,7 @@
 		    <ul id="nav" class="nav justify-content-center">		
 				<li id="list" class="nav-item"><a class="nav-link active" href="
 					<c:if test="${!empty loginInfo}"><c:url value="${pageContext.request.contextPath}/wifi/orderview"/></c:if>
-					<c:if test="${empty loginInfo}"><c:url value="${kakao_url}"/></c:if> ">게시판으로</a>
+					<c:if test="${empty loginInfo}"><c:url value="${pageContext.request.contextPath}/wifi/kakaoLogin"/></c:if> ">게시판으로</a>
 				</li>
 			<c:if test="${!empty loginInfo}">
 				<li id="logout" class="nav-item">

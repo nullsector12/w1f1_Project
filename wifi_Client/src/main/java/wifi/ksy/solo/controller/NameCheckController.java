@@ -19,7 +19,7 @@ public class NameCheckController {
 	
 	
 	@ResponseBody
-	@RequestMapping(value="member/nameCheck")
+	@RequestMapping(value="/nameCheck")
 	public String nameCheck (
 			@RequestParam("name") String name
 			) {

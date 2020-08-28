@@ -10,19 +10,9 @@
 <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 </head>
 <body>
-
-	<%@ include file="/WEB-INF/views/include/header.jsp" %>
-
-	<form method="post">
-		<table>
-			<tr>
-				<td>카카오 인증 아이디 확인</td>
-				<td><input type="email" name="id" id="id" value="${email}" readonly></td>
-			</tr>
-			<tr>
-				<td><input type="submit" value="확인"></td>
-			</tr>
-		</table>
+	<form method="post" id="loginForm">
+		<input type="email" name="id" id="id" value="${email}" readonly>	
 	</form>
+	<script>this.document.getElementById("loginForm").submit();</script>
 </body>
 </html>
