@@ -4,6 +4,7 @@ import javax.servlet.http.HttpServletRequest;
 
 import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.web.client.RestTemplateBuilder;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -27,7 +28,8 @@ public class ItemRegService {
 		
 		Item item = regRequest.toItem();
 		
-
+		result = dao.insertItem(item);
+		System.out.println("item Reg result : " + result);
 		
 		
 		return result;

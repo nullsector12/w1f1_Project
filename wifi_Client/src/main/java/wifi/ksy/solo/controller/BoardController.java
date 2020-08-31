@@ -17,4 +17,8 @@ public class BoardController {
 		return "board/itemList";
 	}
 	
+	@RequestMapping(value="wifi/itemList")
+	public String itemListView2() {
+		return "board/itemList";
+	}
 }

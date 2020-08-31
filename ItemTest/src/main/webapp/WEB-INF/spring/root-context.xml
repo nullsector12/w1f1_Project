@@ -40,5 +40,19 @@
 			설정한다. -->
 		<constructor-arg index="0" ref="sqlSessionFactory"></constructor-arg>
 	</bean>	
+	
+		<!-- MyBatis 트랜젹션 관리자 설정 -->
+	<bean id="transactionManager"
+	class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+		<property name="dataSource">
+		<ref bean="dataSource" />
+		</property>
+	</bean>
+	
+	<!-- namespaces에서 tx 속성 체크 -->
+	<tx:annotation-driven transaction-manager="transactionManager"  />
+	
+	<!-- 트랜잭션 처리 끝 -->		
+		
 		
 </beans>

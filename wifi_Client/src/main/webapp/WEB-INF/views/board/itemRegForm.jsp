@@ -128,7 +128,7 @@ function regItem() {
 	
 	$.ajax({
 		
-		url: 'http://localhost:8090/regItem',
+		url: "http://localhost:8090/wifi/regItem",
 		type: 'POST',
 		processDate: false,
 		contentType: false,

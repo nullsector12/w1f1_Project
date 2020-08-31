@@ -4,14 +4,16 @@ import javax.servlet.http.HttpServletRequest;
 
 import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import wifi.item.test.dao.ItemDao;
 import wifi.item.test.model.Item;
 import wifi.item.test.model.ItemRegRequest;
 
 
-
+@Service
 public class ItemRegService {
+	
 	
 	private ItemDao dao;
 	

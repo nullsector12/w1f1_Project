@@ -1,9 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>   
 <link rel="stylesheet" type="text/css" href="/static/css/bootstrap.css">
 <script src="/static/js/bootstrap.js"></script>
-<script src="https://code.jquery.com/jquery-1.12.4.js"></script>    
 
 <header>
       <div class="collapse bg-dark" id="navbarHeader">
@@ -17,7 +16,7 @@
         <div class="container d-flex justify-content-between">
 		    <ul id="nav" class="nav justify-content-center">		
 				<li id="list" class="nav-item"><a class="nav-link active" href="
-					<c:if test="${!empty loginInfo}"><c:url value="${pageContext.request.contextPath}/wifi/orderview"/></c:if>
+					<c:if test="${!empty loginInfo}"><c:url value="${pageContext.request.contextPath}/wifi/itemList"/></c:if>
 					<c:if test="${empty loginInfo}"><c:url value="${pageContext.request.contextPath}/wifi/kakaoLogin"/></c:if> ">게시판으로</a>
 				</li>
 			<c:if test="${!empty loginInfo}">

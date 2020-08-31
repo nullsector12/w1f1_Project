@@ -2,14 +2,14 @@ package wifi.item.test.model;
 
 import java.sql.Timestamp;
 
-import org.springframework.web.multipart.MultipartFile;
+
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 
-import wifi.item.test.model.Item;
+
 
 public class ItemRegRequest {
-
+	
 	private String title;
 	private int price;
 	private int count_m;
@@ -17,9 +17,7 @@ public class ItemRegRequest {
 	@JsonFormat(pattern = "YYYY-MM-DD HH:mm:ss", timezone = "Asia/Seoul")
 	private Timestamp receive;
 	private String addr;
-	private String location;
 	private String content;
-	private MultipartFile photo;
 	//거래중/거래완료/게시기간만료/수령대기중?/추천공구 / 일반공구 - 통합 상태값
 	private int state;
 	private int view_count;
@@ -31,7 +29,7 @@ public class ItemRegRequest {
 	}
 	
 	public ItemRegRequest(String title, int price, int count_m, int count_w, Timestamp receive, String addr,
-			String location, String content, MultipartFile photo, int state, int view_count, int category, int midx) {
+			String content, int state, int view_count, int category, int midx) {
 		super();
 		this.title = title;
 		this.price = price;
@@ -39,9 +37,7 @@ public class ItemRegRequest {
 		this.count_w = count_w;
 		this.receive = receive;
 		this.addr = addr;
-		this.location = location;
 		this.content = content;
-		this.photo = photo;
 		this.state = state;
 		this.view_count = view_count;
 		this.category = category;
@@ -83,24 +79,14 @@ public class ItemRegRequest {
 	public void setAddr(String addr) {
 		this.addr = addr;
 	}
-	public String getLocation() {
-		return location;
-	}
-	public void setLocation(String location) {
-		this.location = location;
-	}
+
 	public String getContent() {
 		return content;
 	}
 	public void setContent(String content) {
 		this.content = content;
 	}
-	public MultipartFile getPhoto() {
-		return photo;
-	}
-	public void setPhoto(MultipartFile photo) {
-		this.photo = photo;
-	}
+
 	public int getState() {
 		return state;
 	}
@@ -128,8 +114,7 @@ public class ItemRegRequest {
 	
 	public Item toItem() {
 		return new Item(0, title, price, count_m, count_w, null, receive, addr, 
-				location, content, null, state, view_count, category, midx);
+				content, state, view_count, category, midx);
 	}
-	
 	
 }

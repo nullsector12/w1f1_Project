@@ -7,9 +7,9 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 <link rel="stylesheet" type="text/css" href="/static/css/bootstrap.css">
 <script src="/static/js/bootstrap.js"></script>
-<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 </head>
 <body>
 	<header>
