@@ -9,50 +9,50 @@ public class Item {
 	
 	private int iidx;
 	private String title;
+	private int category;
 	private int price;
 	private int conut_m;
 	private int count_w;
 	
 	@JsonFormat(pattern="YYYY/MM/DD hh:mm:ss", timezone="Asia/Seoul")
 	private Timestamp regdate;
-
-	@JsonFormat(pattern="YYYY/MM/DD hh:mm:ss", timezone="Asia/Seoul")
-	private Timestamp receive;
 	
 	private String addr;
+	
+	@JsonFormat(pattern="YYYY/MM/DD hh:mm:ss", timezone="Asia/Seoul")
+	private Timestamp receive;
+	private String photo;
 	private String content;
-
 	private int state;
 	private int view_count;
-	private int category;
 	private int midx;
 	
 	public Item() {
 		
 	}
 	
-	public Item(String title, int price, int count_m, int count_w, Timestamp receive, String addr,
-			String content, int state, int view_count, int category, int midx) {
-		this(0, title, price, count_m, count_w, null, receive, addr, 
-				content, state, view_count, category, midx);
+	public Item(String title, int category, int price, int count_m, int count_w, String addr, Timestamp receive, 
+			String content, int state, int midx) {
+		this(0, title, category, price, count_m, count_w, null, addr, receive, null, content, state, 0, midx);
 	}
 	
-	public Item(int iidx, String title, int price, int conut_m, int count_w, Timestamp regdate, Timestamp receive,
-			String addr, String content, int state, int view_count, int category,
+	public Item(int iidx, String title, int category, int price, int conut_m, int count_w, Timestamp regdate, String addr, Timestamp receive,
+			String photo, String content, int state, int view_count, 
 			int midx) {
-		super();
+		
 		this.iidx = iidx;
 		this.title = title;
+		this.category = category;
 		this.price = price;
 		this.conut_m = conut_m;
 		this.count_w = count_w;
 		this.regdate = regdate;
-		this.receive = receive;
 		this.addr = addr;
+		this.receive = receive;
+		this.photo = photo;
 		this.content = content;
 		this.state = state;
 		this.view_count = view_count;
-		this.category = category;
 		this.midx = midx;
 	}
 	
@@ -110,6 +110,16 @@ public class Item {
 		return new Date(receive.getTime());
 	}
 	
+	
+	
+	public String getPhoto() {
+		return photo;
+	}
+
+	public void setPhoto(String photo) {
+		this.photo = photo;
+	}
+
 	public String getAddr() {
 		return addr;
 	}
@@ -130,12 +140,15 @@ public class Item {
 	public void setState(int state) {
 		this.state = state;
 	}
+	
 	public int getView_count() {
 		return view_count;
 	}
+	
 	public void setView_count(int view_count) {
 		this.view_count = view_count;
 	}
+	
 	public int getCategory() {
 		return category;
 	}
@@ -147,6 +160,14 @@ public class Item {
 	}
 	public void setMidx(int midx) {
 		this.midx = midx;
+	}
+
+	@Override
+	public String toString() {
+		return "Item [iidx=" + iidx + ", title=" + title + ", category=" + category + ", price=" + price + ", conut_m="
+				+ conut_m + ", count_w=" + count_w + ", regdate=" + regdate + ", addr=" + addr + ", receive=" + receive
+				+ ", photo=" + photo + ", content=" + content + ", state=" + state
+				+ ", midx=" + midx + "]";
 	}
 	
 	

@@ -24,7 +24,7 @@ public class KakaoLoginController {
 		
 		
 		// 카카오 디벨로퍼스에서 미리 설정한 REST API의 리다이렉트 경로를 리턴하는 메서드 
-		@RequestMapping(value="/wifi/kakaoLogin", method= RequestMethod.GET)
+		@RequestMapping(value="wifi/kakaoLogin", method= RequestMethod.GET)
 		public String KakaoLoginForm (HttpSession session) {
 			
 			
