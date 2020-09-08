@@ -16,8 +16,10 @@ public class ItemRegRequest {
 	private int count_m;
 	private int count_w;
 	private String addr;
+	
 	@JsonFormat(pattern = "YYYY-MM-DD HH:mm:ss", timezone = "Asia/Seoul")
 	private Timestamp receive;
+	
 	private MultipartFile photo;
 	private String content;
 	//거래중/거래완료/게시기간만료/수령대기중?/추천공구 / 일반공구 - 통합 상태값
@@ -27,6 +29,20 @@ public class ItemRegRequest {
 	public ItemRegRequest() {
 		
 	}
+	
+//	public ItemRegRequest(String title, int price, int count_m, int count_w, String addr,
+//			 String content, int state, int category, int midx) {
+//		
+//		this.title = title;
+//		this.category = category;
+//		this.price = price;
+//		this.count_m = count_m;
+//		this.count_w = count_w;
+//		this.addr = addr;
+//		this.content = content;
+//		this.state = state;
+//		this.midx = midx;
+//	}
 	
 	public ItemRegRequest(String title, int price, int count_m, int count_w, Timestamp receive, String addr,
 			MultipartFile photo, String content, int state, int category, int midx) {
@@ -56,24 +72,29 @@ public class ItemRegRequest {
 	public void setPrice(int price) {
 		this.price = price;
 	}
+	
 	public int getCount_m() {
 		return count_m;
 	}
 	public void setCount_m(int count_m) {
 		this.count_m = count_m;
 	}
+	
 	public int getCount_w() {
 		return count_w;
 	}
 	public void setCount_w(int count_w) {
 		this.count_w = count_w;
 	}
+	
 	public Timestamp getReceive() {
 		return receive;
 	}
+	
 	public void setReceive(Timestamp receive) {
 		this.receive = receive;
 	}
+	
 	public String getAddr() {
 		return addr;
 	}
@@ -117,8 +138,9 @@ public class ItemRegRequest {
 	}
 	
 	public Item toItem() {
-		return new Item(0, title, category, price, count_m, count_w, null, addr, receive,  
-				null, content, state, 0, midx);
+		return new Item(0, title, category, price, count_m, count_w, 
+				null, addr, receive, null, content, state, 0, midx);
 	}
+	
 	
 }

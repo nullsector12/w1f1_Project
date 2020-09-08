@@ -6,13 +6,106 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 <mapper namespace="wifi.item.test.dao.ItemDao">
 
 	<!-- 게시글 등록 -->
-	<insert id="insertItem" parameterType="wifi.item.test.model.Item">
+<!-- 	<insert id="insertItem" parameterType="wifi.item.test.model.Item">
 		insert into wifi.item (title, category, price, count_m, count_w, addr, receive, photo, content, state, midx) 
 		values (#{title}, #{category}, #{price}, #{count_m}, #{count_w}, #{addr}, #{receive}, #{photo}, #{content}, #{state}, #{midx})
+	</insert> -->
+	
+	<insert id="insertItem" parameterType="wifi.item.test.model.Item">
+		insert into wifi.item (title, category, price, count_m, count_w, addr, content, state, midx) 
+		values (#{title}, #{category}, #{price}, #{count_m}, #{count_w}, #{addr}, #{content}, #{state}, #{midx})
 	</insert>
 	
 	
+	<resultMap type="wifi.item.test.model.MyItem" id="resultItem">
+		<id property="iidx" column="iidx"/>
+	</resultMap>
+	
+	<resultMap type="wifi.item.test.model.MySell" id="resultSell">
+		<id property="midx" column="midx"/>
+	</resultMap>
 	
 	
+	<select id="selectList" parameterType="map" resultMap="resultItem">
+		select * from wifi.myitem
+		
+		<include refid="listSearch" />
+		
+		limit #{startRow}, #{count}
+	</select>
+	
+	<select id="totalCount" parameterType="map" resultType="int">
+	
+		select count(*) from wifi.myitem
+		
+		<include refid="listSearch" />
+	
+	</select>
+	
+	
+	<sql id="listSearch">
+		<where>
+			<if test="searchType != null">
+				<if test="searchType == 'title'">
+					<include refid="whereTitle" />
+				</if>
+				<if test="searchType == 'category'">
+					<include refid="whereCategory" />
+				</if>
+				<if test="searchType == 'regDate'">
+					<include refid="whereRegDate" />
+				</if>	
+			</if>
+			
+			<if test="istate != null">
+				<if test="istate == 0">
+					<include refid="whereIstate" />
+				</if>
+				<if test="istate == 1">
+					<include refid="whereIstate" />
+				</if>
+			</if>
+			
+			<if test="midx != null">
+				<include refid="whereMidx" />
+			</if>
+		</where>
+	</sql>
+	
+	<sql id="whereTitle">
+	
+		and title like concat ('%',#{keyword},'%')
+
+	</sql>
+	
+	<sql id="whereCategory">
+	
+		and category=#{keyword}
+
+	</sql>
+	
+	<sql id="whereRegDate">
+	
+		and order by  ('%',#{keyword},'%') desc
+
+	</sql>
+	
+	<sql id="whereIstate">
+	
+		and istate=#{istate}
+
+	</sql>
+	
+	<sql id="whereMidx">
+	
+		and midx=#{midx}
+
+	</sql>
+	
+	<sql id="increase">
+	
+		and midx=#{midx}
+
+	</sql>
 	
 </mapper>

@@ -47,6 +47,7 @@ public class ItemRegService {
 
 				// 시스템의 실제(절대) 경로
 				String realPath = request.getSession().getServletContext().getRealPath(uri);
+				System.out.println(realPath);
 
 				// 저장할 이미지 파일의 새로운 이름 생성
 				String newFileName = System.nanoTime() + "_" + file.getOriginalFilename();
@@ -60,7 +61,7 @@ public class ItemRegService {
 				item.setPhoto(newFileName);
 
 			} else {
-				item.setPhoto("defalult.png");
+				item.setPhoto("default.png");
 			}
 
 			result = dao.insertItem(item);

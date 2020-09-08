@@ -32,6 +32,7 @@
 </body>
 </html>
 <script>
+	// Item 객체 생성
 	function Item(iidx, title, price, count_m, count_w, regdate, 
 			receive, addr, content, state, view_count, category, midx) {
 		
@@ -49,7 +50,24 @@
 		this.category = category;
 		this.midx = midx;
 		
-	}// Item 객체 생성 end
+	} // Item 객체 생성 end
+	
+	// ItemListView 객체 생성
+	function ItemListView (itemTotalCount, currentPageNumber, itemList, pageTotalCount, itemCountPerPage, startRow){
+		this.itemTotalCount = itemTotalCount;
+		this.currentPageNumber = currentPageNumber;
+		this.itemList = itemList;
+		this.pageTotalCount = pageTotalCount;
+		this.itemCountPerPage = itemCountPerPage;
+		this.startRow = startRow;
+	
+	} // ItemListView 객체 생성 end
+	
+	function getItemListView () {
+		
+		var html = '';
+		
+	} // getItemListView() end
 	
 	// 게시글 등록으로 이동
 	function goItemReg() {

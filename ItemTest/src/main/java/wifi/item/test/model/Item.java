@@ -14,13 +14,14 @@ public class Item {
 	private int conut_m;
 	private int count_w;
 	
-	@JsonFormat(pattern="YYYY/MM/DD hh:mm:ss", timezone="Asia/Seoul")
+	@JsonFormat(pattern="YYYY-MM-DD hh:mm:ss", timezone="Asia/Seoul")
 	private Timestamp regdate;
 	
 	private String addr;
 	
-	@JsonFormat(pattern="YYYY/MM/DD hh:mm:ss", timezone="Asia/Seoul")
+	@JsonFormat(pattern="YYYY-MM-DD hh:mm:ss", timezone="Asia/Seoul")
 	private Timestamp receive;
+	
 	private String photo;
 	private String content;
 	private int state;
@@ -31,11 +32,34 @@ public class Item {
 		
 	}
 	
+//	public Item(String title, int category, int price, int count_m, int count_w, String addr, 
+//			String content, int state, int midx) {
+//		this(0, title, category, price, count_m, count_w, addr, content, state, 0, midx);
+//	}
+//	
+//
+//	
+//	
+//	public Item(int iidx, String title, int category, int price, int conut_m, int count_w, String addr,
+//			String content, int state, int view_count, int midx) {
+//		
+//		this.iidx = iidx;
+//		this.title = title;
+//		this.category = category;
+//		this.price = price;
+//		this.conut_m = conut_m;
+//		this.count_w = count_w;
+//		this.addr = addr;
+//		this.content = content;
+//		this.state = state;
+//		this.view_count = view_count;
+//		this.midx = midx;
+//	}
+	
 	public Item(String title, int category, int price, int count_m, int count_w, String addr, Timestamp receive, 
 			String content, int state, int midx) {
 		this(0, title, category, price, count_m, count_w, null, addr, receive, null, content, state, 0, midx);
 	}
-	
 	public Item(int iidx, String title, int category, int price, int conut_m, int count_w, Timestamp regdate, String addr, Timestamp receive,
 			String photo, String content, int state, int view_count, 
 			int midx) {
@@ -74,6 +98,7 @@ public class Item {
 	public void setPrice(int price) {
 		this.price = price;
 	}
+	
 	public int getConut_m() {
 		return conut_m;
 	}
@@ -87,7 +112,7 @@ public class Item {
 		this.count_w = count_w;
 	}
 	
-	@JsonFormat(pattern="YYYY/MM/DD hh:mm:ss", timezone="Asia/Seoul")
+	@JsonFormat(pattern="YYYY-MM-DD hh:mm:ss", timezone="Asia/Seoul")
 	public Timestamp getRegdate() {
 		return regdate;
 	}
@@ -96,20 +121,15 @@ public class Item {
 		this.regdate = regdate;
 	}
 	
+	@JsonFormat(pattern="YYYY-MM-DD hh:mm:ss", timezone="Asia/Seoul")
 	public Timestamp getReceive() {
 		return receive;
 	}
 	
-	@JsonFormat(pattern="YYYY/MM/DD hh:mm:ss", timezone="Asia/Seoul")
+	@JsonFormat(pattern="YYYY-MM-DD hh:mm:ss", timezone="Asia/Seoul")
 	public void setReceive(Timestamp receive) {
 		this.receive = receive;
 	}
-	
-	@JsonFormat(pattern="YYYY/MM/DD hh:mm:ss", timezone="Asia/Seoul")
-	public Date getToDate() {
-		return new Date(receive.getTime());
-	}
-	
 	
 	
 	public String getPhoto() {
@@ -166,9 +186,18 @@ public class Item {
 	public String toString() {
 		return "Item [iidx=" + iidx + ", title=" + title + ", category=" + category + ", price=" + price + ", conut_m="
 				+ conut_m + ", count_w=" + count_w + ", regdate=" + regdate + ", addr=" + addr + ", receive=" + receive
-				+ ", photo=" + photo + ", content=" + content + ", state=" + state
+				+ ", photo=" + photo + ", content=" + content + ", state=" + state + ", view_count=" + view_count
 				+ ", midx=" + midx + "]";
 	}
+
+//	@Override
+//	public String toString() {
+//		return "Item [iidx=" + iidx + ", title=" + title + ", category=" + category + ", price=" + price + ", conut_m="
+//				+ conut_m + ", count_w=" + count_w + ", addr=" + addr + ", content=" + content
+//				+ ", state=" + state + ", view_count=" + view_count + ", midx=" + midx + "]";
+//	}
+
+	
 	
 	
 }
