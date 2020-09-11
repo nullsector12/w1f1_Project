@@ -21,9 +21,17 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		<id property="iidx" column="iidx"/>
 	</resultMap>
 	
-<!-- 	<resultMap type="wifi.item.test.model.MySell" id="resultSell">
-		<id property="midx" column="midx"/>
-	</resultMap> -->
+	<select id="selectByIidx" resultType="wifi.item.test.model.Item">
+	
+		select * from wifi.item where iidx=#{iidx}
+	
+	</select>
+	
+	<update id="increaseViewCount">
+		
+		update wifi.item set view_count = view_count+1 where iidx=#{iidx}
+		
+	</update>
 	
 	
 	<select id="selectList" parameterType="map" resultMap="resultItem">

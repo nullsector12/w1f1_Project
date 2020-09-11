@@ -17,7 +17,7 @@ public class ItemRegRequest {
 	private int count_w;
 	private String addr;
 	
-	@JsonFormat(pattern = "YYYY-MM-DD HH:mm:ss", timezone = "Asia/Seoul")
+	@JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", timezone = "Asia/Seoul")
 	private Timestamp receive;
 	
 	private MultipartFile photo;
@@ -29,20 +29,6 @@ public class ItemRegRequest {
 	public ItemRegRequest() {
 		
 	}
-	
-//	public ItemRegRequest(String title, int price, int count_m, int count_w, String addr,
-//			 String content, int state, int category, int midx) {
-//		
-//		this.title = title;
-//		this.category = category;
-//		this.price = price;
-//		this.count_m = count_m;
-//		this.count_w = count_w;
-//		this.addr = addr;
-//		this.content = content;
-//		this.state = state;
-//		this.midx = midx;
-//	}
 	
 	public ItemRegRequest(String title, int price, int count_m, int count_w, Timestamp receive, String addr,
 			MultipartFile photo, String content, int state, int category, int midx) {

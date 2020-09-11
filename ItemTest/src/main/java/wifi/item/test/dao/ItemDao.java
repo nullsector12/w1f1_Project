@@ -16,6 +16,10 @@ public interface ItemDao {
 	// List<MyItem> selectRList (Map<String, Object> search);
 
 	int totalCount(Map<String, Object> search);
+
+	Item selectByIidx(int iidx);
+
+	void increaseViewCount(int iidx);
 	
 	
 }

@@ -4,12 +4,15 @@ import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import wifi.item.test.model.Item;
 import wifi.item.test.model.ItemListView;
 import wifi.item.test.model.ItemRegRequest;
+import wifi.item.test.service.ItemInfoService;
 import wifi.item.test.service.ItemListViewService;
 import wifi.item.test.service.ItemRegService;
 
@@ -24,6 +27,9 @@ public class ItemRestController {
 	@Autowired
 	private ItemListViewService listService;
 	
+	@Autowired
+	private ItemInfoService infoService;
+	
 	@PostMapping
 	public int regItem (ItemRegRequest regRequest, HttpServletRequest request ) {
 		
@@ -37,20 +43,13 @@ public class ItemRestController {
 	@GetMapping
 	public ItemListView getItemList (HttpServletRequest request) {
 		
-//		String searchType = request.getParameter("searchType");
+
 		String istate = request.getParameter("istate");
-//		String keyword = request.getParameter("keyword");
-		
-//		if(keyword.isEmpty()) {
-//			keyword = "keyword : NULL";
-//		}
-		
+
 		if(istate==null) {
 			istate = "널";
 		}
 		
-//		System.out.println("Controller searchType : " + searchType);
-//		System.out.println("Controller keyword : " + keyword);
 		System.out.println("Controller istate : " + istate);
 		
 		ItemListView itemListView = null;
@@ -64,6 +63,12 @@ public class ItemRestController {
 		}
 		
 		return itemListView;
+	}
+	
+	@GetMapping("/{iidx}")
+	public Item getItemInfo(@PathVariable("iidx") int iidx) {
+		
+		return infoService.getItemInfo(iidx);
 	}
 	
 }

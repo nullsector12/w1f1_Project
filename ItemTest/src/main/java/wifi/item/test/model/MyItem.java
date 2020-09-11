@@ -15,9 +15,9 @@ public class MyItem {
 	private int price;
 	private int count_m;
 	private int count_w;
-	@JsonFormat(pattern = "YYYY-MM-DD HH:mm:ss", timezone = "Asia/Seoul")
+	@JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", timezone = "Asia/Seoul")
 	private Timestamp regdate;
-	@JsonFormat(pattern = "YYYY-MM-DD HH:mm:ss", timezone = "Asia/Seoul")
+	@JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", timezone = "Asia/Seoul")
 	private Timestamp receive;
 	private String addr;
 	private String content;
@@ -122,12 +122,12 @@ public class MyItem {
 		return receive;
 	}
 	
-	@JsonFormat(pattern = "YYYY-MM-DD HH:mm:ss", timezone = "Asia/Seoul")
+	@JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", timezone = "Asia/Seoul")
 	public void setReceive(Timestamp receive) {
 		this.receive = receive;
 	}
 	
-	@JsonFormat(pattern = "YYYY-MM-DD HH:mm:ss", timezone = "Asia/Seoul")
+	@JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", timezone = "Asia/Seoul")
 	public java.util.Date getToDate(){		//${member.toDate}
 		return new java.util.Date(receive.getTime());	// getTime() : 기준 날짜이후 밀리세컨단위 long타입으로 리턴
 	}
