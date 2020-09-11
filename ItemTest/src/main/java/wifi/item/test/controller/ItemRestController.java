@@ -37,21 +37,21 @@ public class ItemRestController {
 	@GetMapping
 	public ItemListView getItemList (HttpServletRequest request) {
 		
-		String searchType = request.getParameter("searchType");
+//		String searchType = request.getParameter("searchType");
 		String istate = request.getParameter("istate");
-		String keyword = request.getParameter("keyword");
+//		String keyword = request.getParameter("keyword");
 		
-		if(keyword.isEmpty()) {
-			keyword = "keyword : NULL";
-		}
+//		if(keyword.isEmpty()) {
+//			keyword = "keyword : NULL";
+//		}
 		
 		if(istate==null) {
-			istate = "istate : NULL";
+			istate = "널";
 		}
 		
-		System.out.println("Controller searchType : " + searchType);
+//		System.out.println("Controller searchType : " + searchType);
+//		System.out.println("Controller keyword : " + keyword);
 		System.out.println("Controller istate : " + istate);
-		System.out.println("Controller keyword : " + keyword);
 		
 		ItemListView itemListView = null;
 		

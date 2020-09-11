@@ -21,9 +21,9 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		<id property="iidx" column="iidx"/>
 	</resultMap>
 	
-	<resultMap type="wifi.item.test.model.MySell" id="resultSell">
+<!-- 	<resultMap type="wifi.item.test.model.MySell" id="resultSell">
 		<id property="midx" column="midx"/>
-	</resultMap>
+	</resultMap> -->
 	
 	
 	<select id="selectList" parameterType="map" resultMap="resultItem">
@@ -45,7 +45,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	
 	<sql id="listSearch">
 		<where>
-			<if test="searchType != null">
+<!-- 			<if test="searchType != null">
 				<if test="searchType == 'title'">
 					<include refid="whereTitle" />
 				</if>
@@ -55,7 +55,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 				<if test="searchType == 'regDate'">
 					<include refid="whereRegDate" />
 				</if>	
-			</if>
+			</if> -->
 			
 			<if test="istate != null">
 				<if test="istate == 0">
@@ -66,9 +66,9 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 				</if>
 			</if>
 			
-			<if test="midx != null">
+	<!-- 		<if test="midx != null">
 				<include refid="whereMidx" />
-			</if>
+			</if> -->
 		</where>
 	</sql>
 	

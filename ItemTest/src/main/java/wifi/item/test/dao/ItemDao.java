@@ -13,7 +13,7 @@ public interface ItemDao {
 	
 	// 게시물 리스트 출력
 	List<MyItem> selectList (Map<String, Object> search);
-	List<MyItem> selectRList (Map<String, Object> search);
+	// List<MyItem> selectRList (Map<String, Object> search);
 
 	int totalCount(Map<String, Object> search);
 	

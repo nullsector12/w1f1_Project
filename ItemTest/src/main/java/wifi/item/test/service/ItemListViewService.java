@@ -30,34 +30,34 @@ public class ItemListViewService {
 		Map<String, Object> search = new HashMap<String, Object>();
 
 		// 검색 데이터 : searchType, keyword
-		String searchType = request.getParameter("searchType");
+//		String searchType = request.getParameter("searchType");
 		String istate = request.getParameter("istate");
-		String keyword = request.getParameter("keyword");
+//		String keyword = request.getParameter("keyword");
 		String count = request.getParameter("count");
 
-		System.out.println("searchType : " + searchType);
-		System.out.println("keyword : " + keyword);
+//		System.out.println("searchType : " + searchType);
+//		System.out.println("keyword : " + keyword);
 
 		// 값이 공백이라면 null로 전달해주기
-		if (searchType != null && !searchType.isEmpty()) {
-			search.put("searchType", searchType);
-		}
-
-		if (keyword != null && !keyword.isEmpty()) {
-			if(searchType=="category") {
-				int categoryNum =  Integer.parseInt(keyword);
-				if(categoryNum==7) {
-					categoryNum=0;
-					search.put("keyword", categoryNum);
-					System.out.println("7일 때 categoryNum : "+categoryNum);
-				}else {
-					search.put("keyword", categoryNum);
-					System.out.println("7이 아닐 때 categoryNum : "+categoryNum);
-				}
-			}else {
-				search.put("keyword", keyword);
-			}
-		}
+//		if (searchType != null && !searchType.isEmpty()) {
+//			search.put("searchType", searchType);
+//		}
+//
+//		if (keyword != null && !keyword.isEmpty()) {
+//			if(searchType=="category") {
+//				int categoryNum =  Integer.parseInt(keyword);
+//				if(categoryNum==7) {
+//					categoryNum=0;
+//					search.put("keyword", categoryNum);
+//					System.out.println("7일 때 categoryNum : "+categoryNum);
+//				}else {
+//					search.put("keyword", categoryNum);
+//					System.out.println("7이 아닐 때 categoryNum : "+categoryNum);
+//				}
+//			}else {
+//				search.put("keyword", keyword);
+//			}
+//		}
 		
 		if (istate != null && !istate.isEmpty()) {
 			search.put("istate", istate);
@@ -89,9 +89,9 @@ public class ItemListViewService {
 		System.out.println("▶page : " + page);
 		System.out.println("▶rpage : " + rpage);
 		System.out.println("▶spage : " + spage);
-		System.out.println("▶searchType : " + searchType);
+//		System.out.println("▶searchType : " + searchType);
 		System.out.println("▶istate : " + istate);
-		System.out.println("▶keyword : " + keyword);
+//		System.out.println("▶keyword : " + keyword);
 
 		if (page != null) {
 			try {
@@ -146,7 +146,6 @@ public class ItemListViewService {
 	}
 	
 	
-
 	public ItemListView getItemRList (HttpServletRequest request) {
 	
 	dao = template.getMapper(ItemDao.class);
@@ -154,17 +153,17 @@ public class ItemListViewService {
 	// 검색한 결과를 담기위한 Map
 	Map<String, Object> search = new HashMap<String, Object>();
 	
-	String searchType = request.getParameter("searchType");
+//	String searchType = request.getParameter("searchType");
 	int istate = Integer.parseInt(request.getParameter("istate"));
-	String keyword = request.getParameter("keyword");
+//	String keyword = request.getParameter("keyword");
 	String count = request.getParameter("count");
 	
-	if(searchType != null && !searchType.isEmpty()) {
-		search.put("searchType", searchType);
-	}
-	if (keyword != null && !keyword.isEmpty()) {
-		search.put("keyword", keyword);
-	}
+//	if(searchType != null && !searchType.isEmpty()) {
+//		search.put("searchType", searchType);
+//	}
+//	if (keyword != null && !keyword.isEmpty()) {
+//		search.put("keyword", keyword);
+//	}
 	search.put("istate", istate);
 	
 	// View로 전달할 결과 데이터
