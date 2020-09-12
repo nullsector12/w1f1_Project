@@ -32,11 +32,12 @@ public class ItemRegService {
 		
 		Item item = regRequest.toItem();
 		
+		System.out.println("ItemRegRequest 확인 : " +regRequest);
+		System.out.println("item 확인 : " + item);
+		
 		try {
 
 			MultipartFile file = regRequest.getPhoto();
-
-			System.out.println(regRequest);
 
 			// 사진이 있다면 사진 파일을 물리적으로 저장하고, 없다면 기본 이미지 파일의 경로를 저장한다.
 			if (file != null && !file.isEmpty() && file.getSize() > 0) {

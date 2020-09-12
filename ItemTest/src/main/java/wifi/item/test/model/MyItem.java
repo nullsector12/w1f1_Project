@@ -15,13 +15,18 @@ public class MyItem {
 	private int price;
 	private int count_m;
 	private int count_w;
+	
 	@JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", timezone = "Asia/Seoul")
 	private Timestamp regdate;
+	
+	private String addr;
+	
 	@JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", timezone = "Asia/Seoul")
 	private Timestamp receive;
-	private String addr;
+	
 	private String content;
 	private String photo;
+	
 	//거래중/거래완료/게시기간만료/수령대기중?/추천공구 / 일반공구 - 통합 상태값
 	private int view_count;
 	private int istate;
@@ -114,10 +119,13 @@ public class MyItem {
 	public Timestamp getRegdate() {
 		return regdate;
 	}
+	
+	@JsonFormat(pattern="yyyy-MM-dd HH:mm:ss", timezone="Asia/Seoul")
 	public void setRegdate(Timestamp regdate) {
 		this.regdate = regdate;
 	}
 	
+	@JsonFormat(pattern="yyyy-MM-dd HH:mm:ss", timezone="Asia/Seoul")
 	public Timestamp getReceive() {
 		return receive;
 	}

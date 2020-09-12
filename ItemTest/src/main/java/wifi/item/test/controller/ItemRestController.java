@@ -50,6 +50,8 @@ public class ItemRestController {
 			istate = "널";
 		}
 		
+		
+		
 		System.out.println("Controller istate : " + istate);
 		
 		ItemListView itemListView = null;
