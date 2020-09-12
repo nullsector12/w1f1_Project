@@ -32,7 +32,7 @@ public class ItemRegRequest {
 	
 	public ItemRegRequest(String title, int price, int count_m, int count_w, Timestamp receive, String addr,
 			MultipartFile photo, String content, int state, int category, int midx) {
-		
+		super();
 		this.title = title;
 		this.category = category;
 		this.price = price;
@@ -73,12 +73,10 @@ public class ItemRegRequest {
 		this.count_w = count_w;
 	}
 	
-	@JsonFormat(pattern="yyyy-MM-dd HH:mm:ss", timezone="Asia/Seoul")
 	public Timestamp getReceive() {
 		return receive;
 	}
 	
-	@JsonFormat(pattern="yyyy-MM-dd HH:mm:ss", timezone="Asia/Seoul")
 	public void setReceive(Timestamp receive) {
 		this.receive = receive;
 	}

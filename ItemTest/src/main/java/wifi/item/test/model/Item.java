@@ -119,7 +119,6 @@ public class Item {
 		return regdate;
 	}
 	
-	@JsonFormat(pattern="yyyy-MM-dd HH:mm:ss", timezone="Asia/Seoul")
 	public void setRegdate(Timestamp regdate) {
 		this.regdate = regdate;
 	}
@@ -129,7 +128,6 @@ public class Item {
 		return receive;
 	}
 	
-	@JsonFormat(pattern="yyyy-MM-dd HH:mm:ss", timezone="Asia/Seoul")
 	public void setReceive(Timestamp receive) {
 		this.receive = receive;
 	}

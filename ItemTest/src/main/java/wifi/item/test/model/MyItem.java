@@ -120,12 +120,11 @@ public class MyItem {
 		return regdate;
 	}
 	
-	@JsonFormat(pattern="yyyy-MM-dd HH:mm:ss", timezone="Asia/Seoul")
+	
 	public void setRegdate(Timestamp regdate) {
 		this.regdate = regdate;
 	}
 	
-	@JsonFormat(pattern="yyyy-MM-dd HH:mm:ss", timezone="Asia/Seoul")
 	public Timestamp getReceive() {
 		return receive;
 	}
