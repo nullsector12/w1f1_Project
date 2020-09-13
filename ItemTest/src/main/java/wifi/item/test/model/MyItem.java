@@ -16,13 +16,17 @@ public class MyItem {
 	private int count_m;
 	private int count_w;
 	
-	@JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", timezone = "Asia/Seoul")
+	@JsonFormat(pattern = "yyyy-MM-DD HH:mm:ss", timezone = "Asia/Seoul")
 	private Timestamp regdate;
 	
 	private String addr;
 	
-	@JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", timezone = "Asia/Seoul")
+	@JsonFormat(pattern = "yyyy-MM-DD HH:mm:ss", timezone = "Asia/Seoul")
 	private Timestamp receive;
+	
+	private int score_s;
+	
+	private String name;
 	
 	private String content;
 	private String photo;
@@ -38,8 +42,9 @@ public class MyItem {
 	}
 	
 	public MyItem(int midx, int iidx, int oidx, int pidx, String title, int category, int price, int count_m,
-			int count_w, Timestamp regdate, Timestamp receive, String addr, String content, String photo,
-			int view_count, int istate, int ostate, int pstate) {
+			int count_w, Timestamp regdate, String addr, Timestamp receive, int score_s, String name, String content,
+			String photo, int view_count, int istate, int ostate, int pstate) {
+		super();
 		this.midx = midx;
 		this.iidx = iidx;
 		this.oidx = oidx;
@@ -50,8 +55,10 @@ public class MyItem {
 		this.count_m = count_m;
 		this.count_w = count_w;
 		this.regdate = regdate;
-		this.receive = receive;
 		this.addr = addr;
+		this.receive = receive;
+		this.score_s = score_s;
+		this.name = name;
 		this.content = content;
 		this.photo = photo;
 		this.view_count = view_count;
@@ -59,7 +66,9 @@ public class MyItem {
 		this.ostate = ostate;
 		this.pstate = pstate;
 	}
-	
+
+
+
 	public int getMidx() {
 		return midx;
 	}
@@ -115,11 +124,9 @@ public class MyItem {
 		this.count_w = count_w;
 	}
 	
-	@JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", timezone = "Asia/Seoul")
 	public Timestamp getRegdate() {
 		return regdate;
 	}
-	
 	
 	public void setRegdate(Timestamp regdate) {
 		this.regdate = regdate;
@@ -129,14 +136,24 @@ public class MyItem {
 		return receive;
 	}
 	
-	@JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", timezone = "Asia/Seoul")
 	public void setReceive(Timestamp receive) {
 		this.receive = receive;
 	}
 	
-	@JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", timezone = "Asia/Seoul")
-	public java.util.Date getToDate(){		//${member.toDate}
-		return new java.util.Date(receive.getTime());	// getTime() : 기준 날짜이후 밀리세컨단위 long타입으로 리턴
+	public int getScore_s() {
+		return score_s;
+	}
+
+	public void setScore_s(int score_s) {
+		this.score_s = score_s;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
 	}
 	
 	public String getAddr() {

@@ -17,12 +17,11 @@ public class ItemRegRequest {
 	private int count_w;
 	private String addr;
 	
-	@JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", timezone = "Asia/Seoul")
+	@JsonFormat(pattern = "yyyy-MM-DD HH:mm:ss", timezone = "Asia/Seoul")
 	private Timestamp receive;
 	
 	private MultipartFile photo;
 	private String content;
-	//거래중/거래완료/게시기간만료/수령대기중?/추천공구 / 일반공구 - 통합 상태값
 	private int state;
 	private int midx;
 	
@@ -73,10 +72,12 @@ public class ItemRegRequest {
 		this.count_w = count_w;
 	}
 	
+	@JsonFormat(pattern = "yyyy-MM-DD HH:mm:ss", timezone = "Asia/Seoul")
 	public Timestamp getReceive() {
 		return receive;
 	}
 	
+	@JsonFormat(pattern = "yyyy-MM-DD HH:mm:ss", timezone = "Asia/Seoul")
 	public void setReceive(Timestamp receive) {
 		this.receive = receive;
 	}
@@ -119,6 +120,7 @@ public class ItemRegRequest {
 	public int getMidx() {
 		return midx;
 	}
+	
 	public void setMidx(int midx) {
 		this.midx = midx;
 	}

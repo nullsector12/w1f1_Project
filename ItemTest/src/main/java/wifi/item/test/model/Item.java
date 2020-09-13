@@ -14,12 +14,12 @@ public class Item {
 	private int count_m;
 	private int count_w;
 	
-	@JsonFormat(pattern="yyyy-MM-dd HH:mm:ss", timezone="Asia/Seoul")
+	@JsonFormat(pattern="yyyy-MM-DD HH:mm:ss", timezone="Asia/Seoul")
 	private Timestamp regdate;
 	
 	private String addr;
 	
-	@JsonFormat(pattern="yyyy-MM-dd HH:mm:ss", timezone="Asia/Seoul")
+	@JsonFormat(pattern="yyyy-MM-DD HH:mm:ss", timezone="Asia/Seoul")
 	private Timestamp receive;
 	
 	private String photo;
@@ -114,22 +114,29 @@ public class Item {
 		this.count_w = count_w;
 	}
 	
-	@JsonFormat(pattern="yyyy-MM-dd HH:mm:ss", timezone="Asia/Seoul")
+	
 	public Timestamp getRegdate() {
 		return regdate;
 	}
 	
+	@JsonFormat(pattern="yyyy-MM-DD HH:mm:ss", timezone="Asia/Seoul")
 	public void setRegdate(Timestamp regdate) {
 		this.regdate = regdate;
 	}
 	
-	@JsonFormat(pattern="yyyy-MM-dd HH:mm:ss", timezone="Asia/Seoul")
+	
 	public Timestamp getReceive() {
 		return receive;
 	}
 	
+	@JsonFormat(pattern="yyyy-MM-DD HH:mm:ss", timezone="Asia/Seoul")
 	public void setReceive(Timestamp receive) {
 		this.receive = receive;
+	}
+	
+	
+	public java.util.Date getToDate() {
+		return new java.util.Date(regdate.getTime());
 	}
 	
 	

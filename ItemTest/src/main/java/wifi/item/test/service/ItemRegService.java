@@ -26,18 +26,19 @@ public class ItemRegService {
 
 	public int regItem (ItemRegRequest regRequest, HttpServletRequest request) {
 		
+		Item item = regRequest.toItem();
+		
+		System.out.println("item 확인 : " + item);
+		
 		dao = template.getMapper(ItemDao.class);
 		
 		int result = 0;
 		
-		Item item = regRequest.toItem();
-		
-		System.out.println("ItemRegRequest 확인 : " +regRequest);
-		System.out.println("item 확인 : " + item);
-		
 		try {
 
 			MultipartFile file = regRequest.getPhoto();
+			
+			System.out.println("ItemRegRequest 확인 : " +regRequest);
 
 			// 사진이 있다면 사진 파일을 물리적으로 저장하고, 없다면 기본 이미지 파일의 경로를 저장한다.
 			if (file != null && !file.isEmpty() && file.getSize() > 0) {
@@ -65,8 +66,6 @@ public class ItemRegService {
 				item.setPhoto("default.png");
 			}
 
-			result = dao.insertItem(item);
-
 		} catch (IllegalStateException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -74,6 +73,8 @@ public class ItemRegService {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} 
+		
+		result = dao.insertItem(item);
 		
 		return result;
 	}
