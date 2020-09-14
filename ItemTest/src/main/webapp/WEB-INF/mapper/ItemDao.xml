@@ -11,22 +11,25 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		values (#{title}, #{category}, #{price}, #{count_m}, #{count_w}, #{addr}, #{receive}, #{photo}, #{content}, #{state}, #{midx})
 	</insert> 
 	
-<!-- 	<insert id="insertItem" parameterType="wifi.item.test.model.Item">
-		insert into wifi.item (title, category, price, count_m, count_w, addr, content, state, midx) 
-		values (#{title}, #{category}, #{price}, #{count_m}, #{count_w}, #{addr}, #{content}, #{state}, #{midx})
-	</insert> -->
 	
-	
+	<!-- 자주 사용하는 resultType을  resultMap설정 -->	
+	<!-- MyItem resultType 선언 -->
 	<resultMap type="wifi.item.test.model.MyItem" id="resultItem">
 		<id property="iidx" column="iidx"/>
 	</resultMap>
 	
+	
+	<!-- 게시글 상세정보  -->
+	<!-- iidx를 통한 게시글 정보 반환 -->
 	<select id="selectByIidx" resultType="wifi.item.test.model.Item">
 	
 		select * from wifi.item where iidx=#{iidx}
 	
 	</select>
 	
+	
+	<!-- 게시글 조회수 증가 -->
+	<!-- 게시글 상세보기 시 view_count + 1  -->
 	<update id="increaseViewCount">
 		
 		update wifi.item set view_count = view_count+1 where iidx=#{iidx}
@@ -52,6 +55,8 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	</select>
 	
 	
+	<!-- 게시글 검색을 위한 sql where문 -->
+	<!-- searchType/istate/midx를 통해  -->
 	<sql id="listSearch">
 		<where>
 <!-- 			<if test="searchType != null">
@@ -60,30 +65,29 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 				</if>
 				<if test="searchType == 'category'">
 					<include refid="whereCategory" />
-				</if>
-				<if test="searchType == 'regDate'">
-					<include refid="whereRegDate" />
 				</if>	
 			</if> -->
-			
 			<if test="istate != null">
+				<!-- 일반리스트 -->
 				<if test="istate == 0">
 					<include refid="whereIstate" />
 				</if>
+				<!-- 파워리스트 -->
 				<if test="istate == 1">
 					<include refid="whereIstate" />
 				</if>
 			</if>
-			
 	<!-- 		<if test="midx != null">
 				<include refid="whereMidx" />
 			</if> -->
+			<include refid="whereRegDate" />
 		</where>
 	</sql>
 	
-	<sql id="whereTitle">
+	<sql id="whereTitleandContent">
 	
 		and title like concat ('%',#{keyword},'%')
+		or content like concat ('%',#{keyword},'%')
 
 	</sql>
 	
@@ -95,7 +99,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	
 	<sql id="whereRegDate">
 	
-		and order by  ('%',#{keyword},'%') desc
+		order by regdate desc
 
 	</sql>
 	

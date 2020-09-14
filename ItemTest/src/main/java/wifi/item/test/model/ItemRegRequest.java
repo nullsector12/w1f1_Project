@@ -17,7 +17,7 @@ public class ItemRegRequest {
 	private int count_w;
 	private String addr;
 	
-	@JsonFormat(pattern = "yyyy-MM-DD HH:mm:ss", timezone = "Asia/Seoul")
+	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd HH:mm:ss", timezone = "Asia/Seoul")
 	private Timestamp receive;
 	
 	private MultipartFile photo;
@@ -72,12 +72,12 @@ public class ItemRegRequest {
 		this.count_w = count_w;
 	}
 	
-	@JsonFormat(pattern = "yyyy-MM-DD HH:mm:ss", timezone = "Asia/Seoul")
+	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd HH:mm:ss", timezone = "Asia/Seoul")
 	public Timestamp getReceive() {
 		return receive;
 	}
 	
-	@JsonFormat(pattern = "yyyy-MM-DD HH:mm:ss", timezone = "Asia/Seoul")
+	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd HH:mm:ss", timezone = "Asia/Seoul")
 	public void setReceive(Timestamp receive) {
 		this.receive = receive;
 	}

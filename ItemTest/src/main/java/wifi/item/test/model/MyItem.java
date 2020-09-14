@@ -16,12 +16,12 @@ public class MyItem {
 	private int count_m;
 	private int count_w;
 	
-	@JsonFormat(pattern = "yyyy-MM-DD HH:mm:ss", timezone = "Asia/Seoul")
+	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd HH:mm:ss", timezone = "Asia/Seoul")
 	private Timestamp regdate;
 	
 	private String addr;
 	
-	@JsonFormat(pattern = "yyyy-MM-DD HH:mm:ss", timezone = "Asia/Seoul")
+	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd HH:mm:ss", timezone = "Asia/Seoul")
 	private Timestamp receive;
 	
 	private int score_s;
@@ -128,6 +128,7 @@ public class MyItem {
 		return regdate;
 	}
 	
+	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd HH:mm:ss", timezone = "Asia/Seoul")
 	public void setRegdate(Timestamp regdate) {
 		this.regdate = regdate;
 	}
@@ -136,6 +137,7 @@ public class MyItem {
 		return receive;
 	}
 	
+	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd HH:mm:ss", timezone = "Asia/Seoul")
 	public void setReceive(Timestamp receive) {
 		this.receive = receive;
 	}
