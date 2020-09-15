@@ -11,12 +11,21 @@
 		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.3.xsd">
 	
 	<!-- Root Context: defines shared resources visible to all other web components -->
-		<!-- hikari 등록 -->
+	
+	<!-- HikariCP 데이터베이스 커넥션 풀 dataSource 설정 -->
+	<!-- <bean id="dataSource" class="com.zaxxer.hikari.HikariDataSource"
+		p:driverClassName="com.mysql.cj.jdbc.Driver" 
+		p:jdbcUrl="jdbc:mysql://localhost:3306/wifi?autoReconnect=true&amp;useUnicode=true&amp;characterEncoding=utf-8&amp;serverTimezone=UTC" 
+		p:username="test"
+		p:password="test">
+	</bean> -->
+	
+	<!-- AWS RDS용 hikari 등록 -->
 	<bean id="dataSource" class="com.zaxxer.hikari.HikariDataSource"
       p:driverClassName="com.mysql.cj.jdbc.Driver"
-      p:jdbcUrl="jdbc:mysql://localhost:3306/wifi?autoReconnect=true&amp;useUnicode=true&amp;characterEncoding=utf-8&amp;serverTimezone=UTC"
+      p:jdbcUrl="jdbc:mysql://projecttestdb.cqjud1dl4kah.ap-northeast-2.rds.amazonaws.com:3306/wifi?autoReconnect=true"
       p:username="test"
-      p:password="test">
+      p:password="gkskvhqnvhtn123">
    </bean>
 
 	<bean id="jdbcTemplate"
