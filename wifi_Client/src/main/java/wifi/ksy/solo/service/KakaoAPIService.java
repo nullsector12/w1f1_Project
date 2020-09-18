@@ -27,10 +27,10 @@ public class KakaoAPIService {
 		private final static String K_CLIENT_ID = "b05c1b29d546be51b63bd8500a0d05d0";
 		
 		// 카카오 디벨로퍼스에서 설정한 리다이렉트 uri
-		private final static String K_REDIRECT_URI_LOGIN = "http://localhost:8085/wifi/kakaoCheck";
+		private final static String K_REDIRECT_URI_LOGIN = "http://localhost:8080/wifi/kakaoCheck";
 		
 		// 로그아웃을 위한 리다이렉트 uri
-		private final static String K_REDIRECT_URI_LOGOUT = "http://localhost:8085/wifi/logout";
+		private final static String K_REDIRECT_URI_LOGOUT = "http://localhost:8080/wifi/logout";
 		
 		public static String logoutRequestUrl (
 				HttpSession session
@@ -65,7 +65,7 @@ public class KakaoAPIService {
 			
 			// 로그인 시 받은 인증코드를 리다이렉트 해주는 uri 
 			// (localhost 포트번호 8080으로 변경해서 사용하면 됨, AWS 배포시엔 AWS 도메인주소로? )
-			POSTPARAMS.add(new BasicNameValuePair("redirect_uri", "http://localhost:8085/wifi/kakaoCheck"));
+			POSTPARAMS.add(new BasicNameValuePair("redirect_uri", K_REDIRECT_URI_LOGIN));
 			
 			// 토큰 발급 시, 보안 강화를 위해 추가로 확인하는 코드
 			POSTPARAMS.add(new BasicNameValuePair("client_secret", "vVaEwYPDgLrw3XqYKqt9mRH8oDK9UNOl"));
