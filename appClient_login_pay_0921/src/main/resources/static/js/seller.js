@@ -259,7 +259,6 @@ function checkQR(oidx){
 					} else if(state==2){
 						html += '<form class="reviewForm" onsubmit="return false;">';
 						html += '	<select class="score_b_'+data[i].buyer+'">';
-						html += '		<option value="0">☆☆☆☆☆</option>';
 						html += '		<option value="1">★☆☆☆☆</option>';
 						html += '		<option value="2">★★☆☆☆</option>';
 						html += '		<option value="3">★★★☆☆</option>';
@@ -536,6 +535,8 @@ function checkQR(oidx){
 	}
 
 	/* 나의 공구판매현황[판매완료] - 구매자 평점등록하기 */
+	// 0922 김승연 평점 등록부분 수정
+	// 알려진 버그 : 평점 등록 후 평점등록기능 비활성화가 다른 페이지를 들어갔다 오면 다시 활성화되어있음
 	function reviewBuyer(iidx, buyer){
 
 		if(confirm('평점등록 후 수정이 불가합니다. 등록하시겠습니까?')){
