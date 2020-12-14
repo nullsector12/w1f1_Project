@@ -118,18 +118,19 @@ function myOrder(loginMidx){
                     html += '  	  <button type="button" class="btnStyleQR" onclick="viewQR('+data[i].oidx+')">QRcode</button>';
                     
                     // 구매완료 ㅡ> 평점등록 버튼 활성화
+                    // 0922 김승연 평점 등록부분 수정
+                    // 알려진 버그 : 평점 등록 후 평점등록기능 비활성화가 다른 페이지를 들어갔다 오면 다시 활성화되어있음.
                 } else if(state==3){
                     html += '  	  <button type="button" class="btn_buyerAction reviewSeller" onclick="reviewForm_toggle('+data[i].iidx+')">review</button>';
                     html += '         <form class="reviewForm_'+data[i].iidx+'" onsubmit="return false;" style="display:none">';
                     html += '			<select class="score_s_'+data[i].seller+'">';
-                    html += '				<option value="0">☆☆☆☆☆</option>';
 					html += '				<option value="1">★☆☆☆☆</option>';
 					html += '				<option value="2">★★☆☆☆</option>';
 					html += '				<option value="3">★★★☆☆</option>';
 					html += '				<option value="4">★★★★☆</option>';
 					html += '				<option value="5">★★★★★</option>';
 					html += '			</select>';
-					html += '           <input class="insert_rvs_'+data[i].seller+'" type="submit" value="ok" onclick="reviewSeller('+data[i].iidx+','+data[i].seller+','+$(".rating-stars").val()+')" >';
+					html += '           <input class="insert_rvs_'+data[i].seller+'" type="submit" value="ok" onclick="reviewSeller('+data[i].iidx+','+data[i].seller+')" >';
 					html += '         </form>';
 					
 					// html += '     <button type="button" class="btn_buyerAction hideOrder" onclick="hideOrder('+data[i].oidx+')">hide</button>';
@@ -153,6 +154,7 @@ function myOrder(loginMidx){
             
 			$('#aside_myOrderlist').html(html);
             $(".reviewForm").hide();
+            //$(".reviewForm").css('display', 'none');
             
 			
 			
@@ -255,12 +257,14 @@ function myOrder(loginMidx){
 
 
     /* 나의 공구구매현황[구매완료] - 평점등록 */
-    function reviewSeller(iidx, seller, score_s){
+    // 0922 김승연 평점 등록 수정
+    // 받아오는 데이터 경로명 변경
+    function reviewSeller(iidx, seller){
         
         if(confirm('평점등록 후 수정이 불가합니다. 등록하시겠습니까?')){
-
-            //var score_s = $(".score_s_"+seller).val();
-            //alert("score_s : "+score_s);
+	
+            var score_s = $(".score_s_"+seller).val();
+            alert("score_s : "+score_s);
 
             var regRvFormData = new FormData();
             regRvFormData.append('score_s',score_s);
