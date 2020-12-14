@@ -16,7 +16,7 @@
   <link rel="stylesheet" href="css/search.css" type="text/css">
   <link rel="stylesheet" href="css/aside.css" type="text/css">
   <link rel="stylesheet" href="css/item.css" type="text/css">
-  <link rel="stylesheet" href="css/comment.css" type="text/css"> 
+  <link rel="stylesheet" href="css/comment.css" type="text/css">
   <link rel="stylesheet" href="css/swiper.min.css" type="text/css"> <!-- swiper관련 -->
   <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css"> <!-- 평점등록 시 별모양 나타내는  -->
   <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
