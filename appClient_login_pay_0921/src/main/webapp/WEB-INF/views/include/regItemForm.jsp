@@ -15,24 +15,25 @@
 
       <form id="regForm" class="w3-container" onsubmit="return false;">
          <div class="w3-section">
-            <label><b>제목</b></label>
+            <label><b><strong>제목</strong></b></label>
             <input class="w3-input w3-border w3-margin-bottom" type="text" name="title" id="title" required>
 
-            <label><b>가격</b></label>
+            <label><b><strong>가격</strong></b></label>
             <input class="w3-halfInput w3-border w3-margin-bottom" type="text" pattern="[0-9]*" name="price" id="price" required>
 
-            <label><b>공구인원</b></label>
+            <label><b><strong>공구인원</strong></b></label>
             <input class="w3-halfInput w3-border w3-margin-bottom" type="number" name="count_m" id="count_m" min="1" required> <br>
 
-            <label><b>수령날짜</b></label>
+            <label><b><strong>수령날짜</strong></b></label>
             <input class="w3-input w3-border w3-margin-bottom" type="datetime-local" name="receive" id="receive" required>
 
             <!-- 장윤원 2020. 09. 20 : 주소와 좌표 입력 기능 추가-->
-            <label><b>판매처 주소</b></label>
-            <input type="text" class="w3-input w3-border w3-margin-bottom" name="addr" id="addr" placeholder="주소">
-			<input type="button" onclick="sample5_execDaumPostcode()" value="주소 검색"><br>
-			<div id="map" style="width:300px;height:300px;margin-top:10px;display:none"></div>
-
+            <label><b><strong>판매처 주소</strong></b></label>
+            <div class="w3-input w3-border w3-margin-bottom">
+            <input type="text" class="" name="addr" id="addr" onclick="sample5_execDaumPostcode()" placeholder="주소" style="float:left; border: none; width: 80%;">
+        	 <input type="button" onclick="sample5_execDaumPostcode()" value="주소 검색" style="float: right;"><br>
+         	</div>
+         	<div id="map" style="width:300px;height:300px;margin-top:10px;display:none"></div>
             <!-- <label><b>판매처 주소</b></label>
             <input class="w3-input w3-border w3-margin-bottom" type="text" name="addr" id="addr" required> -->
 
@@ -40,7 +41,7 @@
             <!-- <label><b>판매처 위치</b></label>
             <input class="w3-input w3-border w3-margin-bottom" type="text" name="location" id="location"> -->
 
-            <label><b>분류</b></label>
+            <label><b><strong>분류</strong></b></label>
             <select id="category" class="w3-padding-8 w3-border w3-margin-bottom">
               <option value="0">전체</option>
               <option value="1">육류/해산물</option>
@@ -48,15 +49,15 @@
               <option value="3">생필품/기타</option>
             </select>
 
-            <label><b>사진</b></label>
+            <label><b><strong>사진</strong></b></label>
             <input class="w3-halfInput w3-border w3-margin-bottom" type="file" name="photo" id="photo"><br>
 
-            <label><b>내용</b></label>
+            <label><b><strong>내용</strong></b></label>
             <textarea class="w3-itemContent w3-border w3-margin-bottom" name="content" id="content" required></textarea>
 
-            <label><b>공구 상태</b></label><br>
+            <label><b><strong>공구 상태</strong></b></label><br>
             <input class="w3-radio w3-border" type="radio" name="state" id="recommend" value="1"><label for="recommend">추천공구로 등록하기</label><input class="w3-radio w3-border" type="radio" name="state" id="normal" value="0"><label for="normal">일반공구로 등록하기</label><br>
-            <input type="text" id="setPayInfo" readonly/>
+            <input type="text" id="setPayInfo" style="display:none" readonly/>
 
             <!-- 김승연 2020. 09. 18 -->
             <!-- 로그인한 멤버 idx 추출 -->
